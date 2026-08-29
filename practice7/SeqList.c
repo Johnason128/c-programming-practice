@@ -39,7 +39,7 @@ void SeqListPushBack(SL* ps, SLDataType x)
 }
 
 //释放空间，销毁
-void SeqListDestory(SL* ps)
+void SeqListDestroy(SL* ps)
 {
     free(ps->a);
     ps->a = NULL;
@@ -52,58 +52,3 @@ void SeqListPopBack(SL* ps)
     assert(ps->size > 0);
     ps->size--;
 }
-
-// // 尾插
-// void SeqListPushBack(SL* ps, SLDataType x) {
-//     // 简单的实现：检查容量，扩容
-//     if (ps->size == ps->capacity) {
-//         int newCapacity = (ps->capacity == 0) ? 4 : ps->capacity * 2;
-//         SLDataType* tmp = (SLDataType*)realloc(ps->a, newCapacity * sizeof(SLDataType));
-//         if (tmp == NULL) {
-//             perror("realloc failed");
-//             return;
-//         }
-//         ps->a = tmp;
-//         ps->capacity = newCapacity;
-//     }
-//     ps->a[ps->size] = x;
-//     ps->size++;
-// }
-
-// // 尾删
-// void SeqListPopBack(SL* ps) {
-//     if (ps->size > 0) {
-//         ps->size--;
-//     }
-// }
-
-// // 头插
-// void SeqListPushFront(SL* ps, SLDataType x) {
-//     // 先检查容量（同尾插）
-//     if (ps->size == ps->capacity) {
-//         int newCapacity = (ps->capacity == 0) ? 4 : ps->capacity * 2;
-//         SLDataType* tmp = (SLDataType*)realloc(ps->a, newCapacity * sizeof(SLDataType));
-//         if (tmp == NULL) {
-//             perror("realloc failed");
-//             return;
-//         }
-//         ps->a = tmp;
-//         ps->capacity = newCapacity;
-//     }
-//     // 将所有元素后移一位
-//     for (int i = ps->size; i > 0; i--) {
-//         ps->a[i] = ps->a[i - 1];
-//     }
-//     ps->a[0] = x;
-//     ps->size++;
-// }
-
-// // 头删
-// void SeqListPopFront(SL* ps) {
-//     if (ps->size == 0) return;
-//     // 将所有元素前移一位
-//     for (int i = 0; i < ps->size - 1; i++) {
-//         ps->a[i] = ps->a[i + 1];
-//     }
-//     ps->size--;
-// }

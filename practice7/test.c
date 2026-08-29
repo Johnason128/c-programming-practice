@@ -16,7 +16,7 @@ void TestSeqList1() {
 
     SeqListPrint(&s1);
 
-    SeqListDestory(&s1);
+    SeqListDestroy(&s1);
 }
 
 int main() {
